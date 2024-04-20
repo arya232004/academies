@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+.note {
+    background: #fff;
+    border-radius: 7px;
+    width: 380px;
+    padding-top: 20px;
+    height: 110px;
+    margin-top: 30px;
+    margin-left: 25px;
+    display: inline-block;
+    position: relative;
+    box-shadow: 0 2px 5px rgb(138, 137, 137);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.plus {
+    height: 400px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.create {
+    background: #fff;
+    border-radius: 7px;
+    width: 380px;
+    padding-top: 1px;
+    height: 110px;
+    padding-bottom: 18px;
+    margin-top: 30px;
+    margin-left: 25px;
+    display: inline-grid;
+    position: relative;
+    box-shadow: 0 2px 5px rgb(138, 137, 137);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body>iframe {
+    display: none;
 }
 
-.App-link {
-  color: #61dafb;
+.mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Set the height to cover the full viewport height */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Set the height to cover the full viewport height */
+}
+
+.Gridhelp {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Creates 3 equal-width columns */
+    grid-column-gap: 90px;
+    /* Adds some space between the grid items */
+}
+
+.note h1 {
+    font-size: 1.1em;
+    margin-bottom: 6px;
+}
+
+.note p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.note button {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+    color: #1976d2;
+    border: none;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    outline: none;
+}
+
+form.create-note {
+    position: relative;
+    width: 380px;
+    float: left;
+    margin-top: 30px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px rgb(138, 137, 137);
+}
+
+form.create-note input,
+form.create-note textarea {
+    width: 100%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+}
+
+form.create-note button {
+    position: absolute;
+    right: 18px;
+    bottom: -18px;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    outline: none;
 }
