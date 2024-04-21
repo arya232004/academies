@@ -13,34 +13,36 @@ export const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const handleAuthStateChanged = async (user) => {
+        const handleAuthStateChanged = async(user) => {
             setUser(user);
             setLoading(false);
             console.log(window.location.pathname.split('/'));
-            if (user && window.location.pathname.split('/')[1] ==='') {
+            if (user && window.location.pathname.split('/')[1] === '') {
                 await accountcreation(user);
                 navigate('/');
-            } else if (!user && window.location.pathname.split('/')[1] !== 'login'){
+
+            } else if (user && window.location.pathname.split('/')[1] === 'login') {
+                navigate('/');
+            } else if (!user && window.location.pathname.split('/')[1] !== 'login') {
                 navigate('/login');
             }
         };
-    
+
         const unsubscribe = auth.onAuthStateChanged(handleAuthStateChanged);
-    
+
         return unsubscribe; // Cleanup function to unsubscribe from the auth state listener
     }, [navigate]);
-    
+
 
     const value = { user };
 
-    return (
-        <AuthContext.Provider value={value}>
-            {!loading && children}
-        </AuthContext.Provider>
+    return ( <
+        AuthContext.Provider value = { value } > {!loading && children } <
+        /AuthContext.Provider>
     );
 }
 
-async function signout(){
+async function signout() {
     await signOut(auth).then(() => {
         window.location.href = "/login";
     });
